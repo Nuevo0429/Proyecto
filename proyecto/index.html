@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BinaryShop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda Online BinaryShop</h1>
+    </header>
+
+    <nav>
+        <a href="#" id="homeLink">Inicio</a>
+        <a href="#" id="loginLink">Login</a>
+        <a href="#" id="logoutLink" style="display:none;">Logout</a>
+        <a href="#" id="adminLink" style="display:none;">Admin</a>
+        <a href="#" id="vendedorLink" style="display:none;">Vendedor</a>
+        <a href="#" id="registerLink">Registrarse</a>
+
+    </nav>
+
+    <div class="container">
+        <div id="productList" class="product-list">
+            <!-- Productos serán añadidos dinámicamente aquí -->
+        </div>
+
+        <div id="cart" class="cart">
+            <p>Carrito: <span id="cartCount">0</span> productos</p>
+            <button class="btn" onclick="viewCart()">Ver carrito</button>
+            <button class="btn" onclick="buyAll()">Comprar todo</button>
+        </div>
+    </div>
+
+    <div id="loginForm" class="form-container" style="display:none;">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login()">Iniciar sesión</button>
+    </div>
+
+    <div id="registerForm" class="form-container" style="display:none;">
+        <h2>Registro</h2>
+        <input type="text" id="newUsername" placeholder="Nuevo Usuario">
+        <input type="password" id="newPassword" placeholder="Contraseña">
+        <select id="newUserRole">
+            <option value="comprador">Comprador</option>
+            <option value="vendedor">Vendedor</option>
+        </select>
+        <button onclick="registerUser()">Registrar</button>
+    </div>
+    
+    <div id="vendedorForm" class="form-container" style="display:none;">
+        <h2>Agregar Producto</h2>
+        <input type="text" id="productName" placeholder="Nombre del Producto">
+        <input type="number" id="productPrice" placeholder="Precio">
+        <input type="file" id="productImage">
+        <button onclick="addProduct()">Añadir Producto</button>
+    </div>
+
+    <div id="adminForm" class="form-container" style="display:none;">
+        <h2>Administración</h2>
+        <h3>Eliminar Producto</h3>
+        <select id="productSelect">
+            <option value="">Seleccionar Producto</option>
+        </select>
+        <button class="btn" onclick="deleteProduct()">Eliminar Producto</button>
+
+        <h3>Eliminar Usuario</h3>
+        <select id="userSelect">
+            <option value="">Seleccionar Usuario</option>
+        </select>
+        <button class="btn" onclick="deleteUser()">Eliminar Usuario</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
